@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ORVÉA — Maison indépendante de création</title>
+<meta name="description" content="ORVÉA, maison indépendante de création. Un premier chapitre consacré à la parfumerie de niche : trois Auras, une signature.">
+<meta name="theme-color" content="#0A0A0A">
+<meta name="color-scheme" content="dark">
+<meta property="og:site_name" content="ORVÉA">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="ORVÉA — Maison indépendante de création">
+<meta property="og:description" content="Un premier chapitre consacré à la parfumerie de niche : trois Auras, une signature.">
+<!-- Pour un aperçu image lors du partage : ajouter <meta property="og:image" content="https://VOTRE-DOMAINE/image.jpg"> -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230A0A0A'/%3E%3Ctext x='32' y='44' font-size='36' text-anchor='middle' fill='%23D8B35A' font-family='Georgia,serif'%3EO%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"ORVÉA","description":"Maison indépendante de création. Parfumerie de niche.","address":{"@type":"PostalAddress","addressLocality":"Joué-lès-Tours","addressCountry":"FR"}}</script>
+<script>document.documentElement.className='js';</script>
+<style>
+/* =====================================================================
+   ORVÉA — styles
+   Palette de la maison : modifiable ici (variables :root)
+   ===================================================================== */
+:root{
+  --black:#0A0A0A;
+  --graphite:#151515;
+  --gold:#D8B35A;
+  --ivory:#F3F0E8;
+  --gray:#A8A49C;
+  --line:rgba(243,240,232,.13);
+  --serif:'Cormorant Garamond','Cormorant',Georgia,'Times New Roman',serif;
+  --sans:'Manrope','Helvetica Neue',Helvetica,Arial,sans-serif;
+  --pad:clamp(22px,5vw,76px);
+  --max:1240px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+  color-scheme:dark;
+}
+/* Les trois mondes */
+.world-vertigo{--w-bg:#0A120E;--w-glow:#2E4B3B;--w-glow2:#6E8F73;--w-accent:#A9C2A0}
+.world-solaris{--w-bg:#140D06;--w-glow:#8F5C22;--w-glow2:#D9A25B;--w-accent:#E0A85C}
+.world-infera{--w-bg:#12070B;--w-glow:#5C1728;--w-glow2:#9B3550;--w-accent:#CF6F85}
+.world-neutral{--w-bg:#101010;--w-glow:#2a2824;--w-glow2:#4a463e;--w-accent:#D8B35A}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;background:var(--black)}
+body{margin:0;background:var(--black);color:var(--ivory);font:400 16.5px/1.75 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+body.lock{overflow:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--ivory);outline-offset:4px}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:400;margin:0;line-height:1.08;letter-spacing:.01em}
+p{margin:0 0 1.2em}
+ul{margin:0;padding:0;list-style:none}
+.skip{position:absolute;left:-999px;top:0;background:var(--ivory);color:var(--black);padding:12px 18px;z-index:200}
+.skip:focus{left:12px;top:12px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.wrap{max-width:var(--max);margin:0 auto}
+.narrow{max-width:760px;margin-left:auto;margin-right:auto}
+.center{text-align:center}
+.sec{position:relative;padding:clamp(84px,12vw,170px) var(--pad)}
+.sec.tight{padding-top:clamp(50px,7vw,100px);padding-bottom:clamp(50px,7vw,100px)}
+.display{font-size:clamp(36px,5.4vw,74px)}
+.title{font-size:clamp(30px,3.8vw,50px)}
+.lead{font-family:var(--serif);font-size:clamp(21px,2.4vw,28px);line-height:1.45;color:var(--ivory)}
+.muted{color:var(--gray)}
+.small{font-size:14px;line-height:1.7}
+.txt{max-width:58ch}
+.center .txt{margin-left:auto;margin-right:auto}
+.hair{width:48px;height:1px;background:var(--gold);border:0;margin:0 0 28px}
+.center .hair{margin-left:auto;margin-right:auto}
+
+/* ---------- Boutons ---------- */
+.btn{display:inline-block;padding:19px 34px;border:1px solid rgba(243,240,232,.38);font:500 11.5px/1 var(--sans);letter-spacing:.26em;text-transform:uppercase;color:var(--ivory);background:transparent;transition:background .6s var(--ease),color .6s var(--ease),border-color .6s var(--ease);cursor:pointer;text-align:center}
+.btn:hover{background:var(--ivory);color:var(--black);border-color:var(--ivory)}
+.btn.solid{background:var(--ivory);color:var(--black);border-color:var(--ivory)}
+.btn.solid:hover{background:transparent;color:var(--ivory)}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.btn-text{display:inline-block;font:500 11.5px/1 var(--sans);letter-spacing:.26em;text-transform:uppercase;padding:0 0 9px;border-bottom:1px solid rgba(216,179,90,.55);transition:border-color .6s,color .6s;cursor:pointer;color:var(--ivory)}
+.btn-text:hover{border-color:var(--gold)}
+.cta-row{display:flex;flex-wrap:wrap;gap:22px 38px;align-items:center}
+.center .cta-row{justify-content:center}
+
+/* ---------- Animations d'apparition ---------- */
+.js .reveal{opacity:0;transform:translateY(16px);transition:opacity 1.6s var(--ease),transform 1.6s var(--ease);transition-delay:var(--d,0s)}
+.js .reveal.in{opacity:1;transform:none}
+#main.enter{animation:enter 1s var(--ease) both}
+@keyframes enter{from{opacity:0}to{opacity:1}}
+@keyframes breathe{from{transform:scale(1) translate3d(0,0,0)}to{transform:scale(1.09) translate3d(1.5%,-1.5%,0)}}
+@keyframes drift{from{transform:translate3d(-3%,0,0) scale(1)}to{transform:translate3d(3%,-4%,0) scale(1.08)}}
+
+/* ---------- En-tête ---------- */
+#site-header{position:fixed;top:0;left:0;right:0;z-index:60;padding:env(safe-area-inset-top,0px) var(--pad) 0;transition:background .8s var(--ease),border-color .8s;border-bottom:1px solid transparent}
+#site-header.solid{background:rgba(10,10,10,.86);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom-color:var(--line)}
+.hdr{display:flex;align-items:center;justify-content:space-between;height:76px;max-width:1500px;margin:0 auto}
+.brand{font-family:var(--serif);font-size:25px;letter-spacing:.42em;margin-right:-.42em;font-weight:500}
+.nav{display:none;gap:clamp(18px,2vw,34px);align-items:center}
+.nav a{font:500 11px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:rgba(243,240,232,.78);padding:10px 0;border-bottom:1px solid transparent;transition:color .5s,border-color .5s}
+.nav a:hover,.nav a[aria-current="page"]{color:var(--ivory);border-bottom-color:var(--gold)}
+.hdr-right{display:flex;align-items:center;gap:26px}
+.cart-btn{font:500 11px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;padding:10px 0;color:var(--ivory)}
+.menu-btn{font:500 11px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;padding:10px 0}
+@media(min-width:1120px){.nav{display:flex}.menu-btn{display:none}}
+
+#menu{position:fixed;inset:0;z-index:70;background:var(--black);padding:calc(env(safe-area-inset-top,0px) + 96px) var(--pad) calc(env(safe-area-inset-bottom,0px) + 32px);display:flex;flex-direction:column;justify-content:space-between;opacity:0;visibility:hidden;transition:opacity .6s var(--ease),visibility .6s}
+#menu.open{opacity:1;visibility:visible}
+#menu a.m{display:block;font-family:var(--serif);font-size:clamp(30px,8vw,46px);line-height:1.25;padding:5px 0;color:var(--ivory)}
+#menu a.m[aria-current="page"]{color:var(--gold)}
+.menu-close{position:absolute;top:calc(env(safe-area-inset-top,0px) + 28px);right:var(--pad);font:500 11px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase}
+.menu-foot{font-size:13px;color:var(--gray);letter-spacing:.04em}
+
+/* ---------- Atmosphères (CSS, aucune image) ---------- */
+.grain::after{content:'';position:absolute;inset:0;pointer-events:none;opacity:.07;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .6 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+.atmo{position:absolute;inset:0;animation:breathe 26s ease-in-out infinite alternate;will-change:transform}
+.world-vertigo .atmo{background:
+  radial-gradient(75% 55% at 28% 18%,rgba(110,143,115,.34),transparent 62%),
+  radial-gradient(60% 55% at 82% 82%,rgba(46,75,59,.62),transparent 70%),
+  repeating-linear-gradient(102deg,rgba(169,194,160,.055) 0 2px,transparent 2px 42px)}
+.world-solaris .atmo{background:
+  radial-gradient(62% 52% at 76% 88%,rgba(217,162,91,.56),transparent 62%),
+  radial-gradient(90% 60% at 16% 104%,rgba(143,92,34,.5),transparent 70%),
+  radial-gradient(50% 40% at 20% 14%,rgba(143,92,34,.16),transparent 70%)}
+.world-infera .atmo{background:
+  radial-gradient(58% 50% at 28% 28%,rgba(92,23,40,.74),transparent 66%),
+  radial-gradient(48% 42% at 76% 72%,rgba(155,53,80,.36),transparent 70%),
+  radial-gradient(40% 30% at 55% 8%,rgba(155,53,80,.14),transparent 70%)}
+.world-neutral .atmo{background:radial-gradient(60% 50% at 50% 38%,rgba(243,240,232,.075),transparent 70%),radial-gradient(40% 40% at 80% 90%,rgba(216,179,90,.07),transparent 70%)}
+
+.photo{position:relative;overflow:hidden;margin:0;background:var(--w-bg,#101010);border:1px solid var(--line)}
+.photo img{width:100%;height:100%;object-fit:cover}
+.photo .px{position:absolute;inset:-9% 0;will-change:transform}
+.photo figcaption{position:absolute;left:18px;bottom:14px;right:18px;font:400 11px/1.5 var(--sans);letter-spacing:.08em;color:rgba(243,240,232,.42)}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;min-height:100svh;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;padding:130px var(--pad) 190px;background:var(--black)}
+@supports(height:100svh){.hero{min-height:100svh}}
+.hg{position:absolute;bottom:-26%;width:62vw;height:78vh;border-radius:50%;opacity:.4;transition:opacity 1.8s var(--ease);animation:drift 30s ease-in-out infinite alternate;pointer-events:none}
+.hg-v{left:-12%;background:radial-gradient(closest-side,#2E4B3B,transparent)}
+.hg-s{left:19%;background:radial-gradient(closest-side,#9A6526,transparent);animation-delay:-9s}
+.hg-i{right:-12%;background:radial-gradient(closest-side,#6B1B2F,transparent);animation-delay:-17s}
+.hero[data-world="vertigo"] .hg-v,.hero[data-world="solaris"] .hg-s,.hero[data-world="infera"] .hg-i{opacity:.68}
+.hero[data-world="vertigo"] .hg-s,.hero[data-world="vertigo"] .hg-i,.hero[data-world="solaris"] .hg-v,.hero[data-world="solaris"] .hg-i,.hero[data-world="infera"] .hg-v,.hero[data-world="infera"] .hg-s{opacity:.1}
+.hero-core{position:relative;z-index:2;will-change:transform,opacity}
+.wordmark{font-size:clamp(46px,13vw,164px);letter-spacing:.3em;margin-right:-.3em;font-weight:400;line-height:1}
+.hero-sub{margin:30px 0 0;color:var(--gray);font-size:clamp(14px,1.5vw,17px);letter-spacing:.08em}
+.signature{margin:clamp(40px,6vw,72px) 0 clamp(40px,5vw,58px)}
+.signature::before{content:'';display:block;width:48px;height:1px;background:var(--gold);margin:0 auto 26px}
+.signature span{font:500 11.5px/1.6 var(--sans);letter-spacing:.38em;text-transform:uppercase;margin-right:-.38em}
+.hero-auras{position:absolute;z-index:3;left:50%;transform:translateX(-50%);bottom:calc(34px + env(safe-area-inset-bottom,0px));width:min(920px,calc(100% - 2*var(--pad)));display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,3vw,40px)}
+.ha{display:block;padding-top:18px;border-top:1px solid var(--w-accent);text-align:left;transition:border-color .8s}
+.ha-name{display:block;font-family:var(--serif);font-size:clamp(15px,2vw,24px);letter-spacing:.18em;line-height:1.2}
+.ha-aura{display:block;margin-top:6px;font-size:12px;color:var(--gray);letter-spacing:.1em}
+.ha:hover .ha-name{color:var(--w-accent)}
+
+/* ---------- Triptyque ---------- */
+.triptych{display:flex;gap:2px;height:min(88vh,880px);min-height:620px;background:var(--black)}
+.panel{position:relative;display:block;flex:1;overflow:hidden;background:var(--w-bg);transition:flex 1.3s var(--ease)}
+.panel .atmo{transition:opacity 1.2s}
+.panel-in{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(24px,3vw,46px)}
+.aura-tag{font:500 11px/1 var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--w-accent)}
+.panel h3,.pname{font-size:clamp(30px,3.4vw,50px);letter-spacing:.12em;line-height:1.1;overflow-wrap:anywhere}
+.kw{display:flex;flex-wrap:wrap;gap:6px 18px;margin:20px 0 18px}
+.kw li{font-size:12.5px;letter-spacing:.06em;color:rgba(243,240,232,.7)}
+.panel p{font-size:15.5px;color:rgba(243,240,232,.82);max-width:34ch;margin-bottom:26px}
+@media(hover:hover) and (min-width:901px){
+  .triptych:hover .panel{flex:.72}
+  .triptych .panel:hover,.triptych .panel:focus-visible{flex:1.75}
+  .triptych:hover .panel:not(:hover) .atmo{opacity:.55}
+}
+@media(max-width:900px){
+  .triptych{flex-direction:column;height:auto;min-height:0}
+  .panel{min-height:76svh}
+}
+
+/* ---------- Colonnes éditoriales ---------- */
+.split{display:grid;gap:clamp(36px,6vw,100px);align-items:center}
+@media(min-width:900px){.split{grid-template-columns:1fr 1fr}.split.rev .split-a{order:2}}
+.row{display:grid;gap:clamp(28px,5vw,80px);align-items:center;padding:clamp(54px,8vw,110px) 0;border-top:1px solid var(--line)}
+@media(min-width:900px){.row{grid-template-columns:1.1fr 1fr}.row.rev .row-a{order:2}}
+.row:first-of-type{border-top:0}
+.pname-big{font-size:clamp(44px,8vw,112px);letter-spacing:.1em;line-height:1;margin:12px 0 22px;overflow-wrap:anywhere}
+.notes{display:flex;flex-wrap:wrap;gap:6px 22px;margin:0 0 26px;color:var(--gray);font-size:14.5px}
+.price{font-family:var(--serif);font-size:24px;margin-bottom:26px}
+.price small{font:400 12.5px var(--sans);color:var(--gray);letter-spacing:.04em;margin-left:8px}
+
+/* ---------- Mondes (page Auras / Produits) ---------- */
+.world-sec{position:relative;background:var(--w-bg);overflow:hidden;min-height:100svh;display:flex;align-items:center;padding:clamp(96px,12vw,170px) var(--pad)}
+.world-sec::before{content:'';position:absolute;left:0;right:0;top:0;height:30vh;background:linear-gradient(var(--prev,#0A0A0A),transparent);z-index:1;pointer-events:none}
+.world-sec>.atmo{opacity:.85}
+.world-sec .wrap{position:relative;z-index:2;width:100%}
+.aura-word{font-size:clamp(60px,14vw,190px);letter-spacing:.06em;line-height:.95;color:var(--w-accent);opacity:.92;margin:0 0 6px}
+.dl{display:grid;gap:0;margin:34px 0 40px;max-width:560px}
+.dl div{display:grid;grid-template-columns:150px 1fr;gap:18px;padding:13px 0;border-top:1px solid var(--line);font-size:15px}
+.dl div:last-child{border-bottom:1px solid var(--line)}
+.dl dt{color:var(--gray);font-size:13px;letter-spacing:.06em}
+.dl dd{margin:0}
+
+.p-hero{position:relative;min-height:92svh;display:flex;align-items:flex-end;overflow:hidden;background:var(--w-bg);padding:140px var(--pad) clamp(54px,8vw,100px)}
+.p-hero .wrap{position:relative;z-index:2;width:100%}
+.p-name{font-size:clamp(50px,13vw,176px);letter-spacing:.1em;line-height:1;margin:18px 0 26px;overflow-wrap:anywhere}
+.buy{display:flex;flex-wrap:wrap;align-items:center;gap:20px 34px;margin-top:34px}
+.buy .price{margin:0}
+.pyr{display:grid;gap:0;margin-top:30px}
+@media(min-width:760px){.pyr{grid-template-columns:repeat(3,1fr);gap:30px}}
+.pyr h4{font:500 11px/1 var(--sans);letter-spacing:.26em;text-transform:uppercase;color:var(--w-accent);margin-bottom:14px;padding-top:16px;border-top:1px solid var(--w-accent)}
+.pyr li{padding:3px 0;font-size:16px}
+details.acc{border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:34px;max-width:620px}
+details.acc summary{cursor:pointer;padding:18px 0;font-size:14px;letter-spacing:.06em;list-style:none;display:flex;justify-content:space-between;gap:20px}
+details.acc summary::-webkit-details-marker{display:none}
+details.acc summary::after{content:'+';color:var(--gold);font-size:18px;line-height:1}
+details.acc[open] summary::after{content:'–'}
+details.acc p{color:var(--gray);font-size:14.5px;padding-bottom:6px}
+.mini{display:grid;gap:2px}
+@media(min-width:760px){.mini{grid-template-columns:1fr 1fr}}
+.mini a{position:relative;display:block;background:var(--w-bg);padding:clamp(34px,5vw,64px) clamp(24px,3vw,44px);overflow:hidden;min-height:260px}
+.mini a>*:not(.atmo){position:relative;z-index:2}
+
+/* ---------- Listes ---------- */
+.principles li{display:grid;gap:6px 40px;padding:26px 0;border-top:1px solid var(--line)}
+.principles li:last-child{border-bottom:1px solid var(--line)}
+@media(min-width:800px){.principles li{grid-template-columns:1fr 1fr;align-items:baseline}}
+.principles b{font:400 clamp(26px,3vw,38px)/1.15 var(--serif)}
+.principles span{color:var(--gray)}
+.steps li{display:grid;gap:8px 50px;padding:30px 0;border-top:1px solid var(--line)}
+.steps li:last-child{border-bottom:1px solid var(--line)}
+@media(min-width:800px){.steps li{grid-template-columns:.8fr 1.2fr}}
+.steps h3{font-size:clamp(24px,2.6vw,32px)}
+.steps p{color:var(--gray);margin:0;max-width:56ch}
+.quote{font-family:var(--serif);font-size:clamp(30px,5vw,62px);line-height:1.18;max-width:20em;margin:0 auto}
+
+.jlist a{display:grid;gap:10px 50px;padding:34px 0;border-top:1px solid var(--line);transition:padding .6s var(--ease)}
+.jlist a:last-child{border-bottom:1px solid var(--line)}
+@media(min-width:800px){.jlist a{grid-template-columns:1fr 1.1fr}.jlist a:hover{padding-left:14px}}
+.jlist h3{font-size:clamp(26px,3vw,40px)}
+.jlist p{color:var(--gray);margin:0;max-width:52ch}
+
+.trust{display:grid;gap:0}
+@media(min-width:760px){.trust{grid-template-columns:repeat(4,1fr);gap:30px}}
+.trust a{display:block;padding:20px 0;border-top:1px solid var(--line)}
+.trust b{display:block;font:400 22px/1.2 var(--serif);margin-bottom:6px}
+.trust span{color:var(--gray);font-size:14px}
+
+/* ---------- Boutique ---------- */
+.shop-row{display:grid;gap:18px 40px;padding:36px 0;border-top:1px solid var(--line);align-items:center}
+.shop-row:last-child{border-bottom:1px solid var(--line)}
+@media(min-width:860px){.shop-row{grid-template-columns:1.3fr 1fr auto;gap:50px}}
+.shop-row h3{font-size:clamp(28px,3.4vw,44px);letter-spacing:.08em}
+.shop-row .aura-tag{display:block;margin-bottom:10px}
+.shop-act{display:flex;align-items:center;gap:26px;flex-wrap:wrap}
+
+/* ---------- Formulaires ---------- */
+.field{display:block;margin-bottom:26px}
+.field span{display:block;font-size:12.5px;letter-spacing:.08em;color:var(--gray);margin-bottom:6px}
+.field input,.field textarea,.field select{width:100%;background:transparent;border:0;border-bottom:1px solid rgba(243,240,232,.3);color:var(--ivory);font:400 16px/1.5 var(--sans);padding:10px 0;border-radius:0;transition:border-color .4s}
+.field textarea{min-height:130px;resize:vertical}
+.field input:focus,.field textarea:focus{outline:none;border-bottom-color:var(--ivory)}
+.field input:focus-visible,.field textarea:focus-visible{outline:2px solid var(--ivory);outline-offset:6px}
+.form-grid{display:grid;gap:0 36px}
+@media(min-width:700px){.form-grid{grid-template-columns:1fr 1fr}.form-grid .full{grid-column:1/-1}}
+.status{min-height:1.6em;margin-top:18px;font-size:14.5px;color:var(--gray)}
+.nl{display:flex;flex-wrap:wrap;gap:18px 30px;align-items:flex-end;max-width:640px}
+.center .nl{margin-left:auto;margin-right:auto;justify-content:center}
+.nl .field{flex:1 1 260px;margin:0}
+.summary{border-top:1px solid var(--line)}
+.summary .l{display:flex;justify-content:space-between;gap:20px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
+.summary .t{font:400 28px var(--serif);border-bottom:0}
+.todo{color:var(--gold)}
+
+/* ---------- Panier ---------- */
+#scrim{position:fixed;inset:0;background:rgba(0,0,0,.62);opacity:0;visibility:hidden;transition:opacity .6s,visibility .6s;z-index:80}
+#scrim.open{opacity:1;visibility:visible}
+#cart{position:fixed;top:0;right:0;bottom:0;width:min(450px,100%);background:var(--graphite);z-index:90;transform:translateX(100%);transition:transform .7s var(--ease),visibility .7s;visibility:hidden;display:flex;flex-direction:column;padding:calc(env(safe-area-inset-top,0px) + 26px) 28px calc(env(safe-area-inset-bottom,0px) + 26px);border-left:1px solid var(--line)}
+#cart.open{transform:none;visibility:visible}
+.cart-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:26px}
+.cart-head h2{font-size:30px}
+.cart-x{font:500 11px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;padding:10px 0}
+#cart-body{flex:1;overflow:auto}
+.ci{display:grid;grid-template-columns:1fr auto;gap:6px 16px;padding:18px 0;border-top:1px solid var(--line)}
+.ci h3{font-size:22px;letter-spacing:.06em}
+.ci .m{color:var(--gray);font-size:13px}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--line)}
+.qty button{width:38px;height:38px;font-size:17px}
+.qty span{min-width:30px;text-align:center;font-size:14px}
+.ci .rm{font-size:12.5px;color:var(--gray);text-decoration:underline;text-underline-offset:4px;text-align:left;padding:0}
+.cart-foot{border-top:1px solid var(--line);padding-top:20px}
+.cart-total{display:flex;justify-content:space-between;font:400 26px var(--serif);margin-bottom:6px}
+.cart-note{font-size:12.5px;color:var(--gray);margin-bottom:18px}
+.cart-foot .btn{width:100%}
+
+/* ---------- Pied de page ---------- */
+#site-footer{border-top:1px solid var(--line);padding:clamp(64px,8vw,110px) var(--pad) calc(env(safe-area-inset-bottom,0px) + 40px);background:var(--black)}
+.foot{display:grid;gap:44px;max-width:var(--max);margin:0 auto}
+@media(min-width:900px){.foot{grid-template-columns:1.4fr 1fr 1fr 1fr}}
+.foot .brand{display:inline-block;margin-bottom:18px}
+.foot h4{font:500 11px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--gray);margin-bottom:18px}
+.foot li a{display:inline-block;padding:5px 0;font-size:15px;color:rgba(243,240,232,.86)}
+.foot li a:hover{color:var(--gold)}
+.foot-base{max-width:var(--max);margin:56px auto 0;padding-top:24px;border-top:1px solid var(--line);color:var(--gray);font-size:12.5px;display:flex;flex-wrap:wrap;gap:8px 30px;justify-content:space-between}
+
+/* ---------- Pages texte ---------- */
+.prose h2{font-size:26px;margin:46px 0 12px}
+.prose p,.prose li{color:rgba(243,240,232,.84);font-size:16px}
+.prose ul{list-style:disc;padding-left:22px;margin-bottom:1.2em}
+.prose li{margin-bottom:6px}
+.page-top{padding-top:clamp(150px,18vw,230px)}
+.article p{font-size:18px;line-height:1.85;color:rgba(243,240,232,.88);max-width:62ch}
+.article p:first-of-type{font-family:var(--serif);font-size:clamp(22px,2.5vw,28px);line-height:1.5;color:var(--ivory)}
+
+@media(max-width:600px){
+  body{font-size:16px}
+  .dl div{grid-template-columns:110px 1fr}
+  .hero{padding-bottom:170px}
+  .btn{padding:18px 26px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .js .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+
+<header id="site-header">
+  <div class="hdr">
+    <a class="brand" href="#/" aria-label="ORVÉA, accueil">ORVÉA</a>
+    <nav class="nav" id="nav" aria-label="Navigation principale"></nav>
+    <div class="hdr-right">
+      <button class="cart-btn" type="button" data-open-cart aria-label="Ouvrir le panier">Panier<span id="cart-count"></span></button>
+      <button class="menu-btn" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu">Menu</button>
+    </div>
+  </div>
+</header>
+
+<div id="menu" aria-label="Menu" inert>
+  <button class="menu-close" type="button" data-menu-toggle aria-label="Fermer le menu">Fermer</button>
+  <nav id="menu-nav" aria-label="Navigation mobile"></nav>
+  <p class="menu-foot">Maison indépendante de création</p>
+</div>
+
+<main id="main" tabindex="-1"></main>
+<footer id="site-footer"></footer>
+
+<div id="scrim" data-close-cart></div>
+<aside id="cart" aria-label="Panier" inert>
+  <div class="cart-head"><h2>Votre collection</h2><button class="cart-x" type="button" data-close-cart>Fermer</button></div>
+  <div id="cart-body"></div>
+  <div class="cart-foot" id="cart-foot"></div>
+</aside>
+
+<noscript><p style="padding:120px 24px;text-align:center">Ce site nécessite JavaScript pour s'afficher.</p></noscript>
+
+<script>
+/* =====================================================================
+   ORVÉA — site officiel (fichier unique)
+
+   COMMENT MODIFIER CE SITE
+   1. CONFIG      : contact, mode de commande, photos, mentions légales.
+   2. AURAS       : textes des trois parfums (VERTIGO, SOLARIS, INFÉRA).
+   3. PRODUITS    : prix et formats.
+   4. ARTICLES    : textes du Journal.
+   Aucune information n'est inventée : tout champ vide est masqué
+   ou signalé « à compléter ».
+
+   PUBLIER EN LIGNE : déposer ce fichier (renommé index.html) sur
+   Netlify, Vercel, GitHub Pages, OVH, etc. La navigation utilise
+   des liens de type #/page : aucune configuration serveur requise.
+   ===================================================================== */
+(function(){
+'use strict';
+
+/* ------------------------------ 1. CONFIG ------------------------------ */
+const CONFIG={
+  // 'demande' : le client envoie une demande de commande, ORVÉA confirme puis encaisse.
+  // 'lien'    : même chose, avec en plus un bouton de règlement vers paymentUrl.
+  mode:'demande',
+  email:'',          // ex. 'contact@votre-domaine.fr'  (réception des commandes et messages)
+  whatsapp:'',       // ex. '33612345678' (indicatif + numéro, sans « + » ni espaces)
+  paymentUrl:'',     // ex. lien de paiement Stripe / SumUp (mode 'lien')
+  formEndpoint:'',   // optionnel : URL d'un service de formulaires (Formspree, etc.) à la place de l'e-mail
+  showSlotLabels:true, // mettre false pour masquer les mentions « photographie à venir »
+  // Photographies : renseigner l'adresse (URL ou fichier) de chaque image. Laisser vide = ambiance générée.
+  images:{
+    // hero:'', maison:'', premier:'', vertigo:'', solaris:'', infera:'', coffret:'', creation:''
+  },
+  legal:{
+    raisonSociale:'ORVÉA',
+    forme:'Entreprise individuelle (micro-entrepreneur)',
+    siren:'104 789 664',
+    siret:'104 789 664 00018',
+    tva:'TVA non applicable, article 293 B du CGI',
+    adresse:'',               // adresse de l'établissement à publier
+    directeurPublication:'',  // nom et prénom
+    hebergeur:'',             // nom et adresse de l'hébergeur du site
+    mediateur:'',             // médiateur de la consommation (obligatoire pour la vente aux particuliers)
+    email:'',
+    telephone:''
+  }
+};
+
+/* ------------------------------ 2. DONNÉES ------------------------------ */
+const AURAS=[
+ {id:'vertigo',nom:'VERTIGO',aura:'Nature',
+  mots:['Fraîcheur','Équilibre','Matière végétale','Respiration'],
+  notes:['Thé blanc','Ananas noir'],
+  pyramide:{tete:[],coeur:[],fond:[]},   // à renseigner : tête / cœur / fond
+  concentration:'',                        // à renseigner une fois vérifiée, ex. '25 %'
+  inci:'',                                 // liste INCI complète, à renseigner
+  court:'Thé blanc, ananas noir. Une fraîcheur qui laisse de l\'air autour de soi.',
+  monde:'Nature n\'est pas un décor, c\'est un souffle. Une Aura de fraîcheur et d\'équilibre, où la matière végétale laisse de l\'air autour de celui qui la porte. VERTIGO en est l\'expression : thé blanc et ananas noir, tenus dans une clarté sans excès.',
+  emotion:'Une respiration. Le thé blanc ouvre l\'espace, l\'ananas noir y glisse une pointe de tension. VERTIGO ne cherche pas à impressionner : elle donne à celui qui la porte l\'impression d\'avoir un peu plus d\'air.',
+  intention:'VERTIGO cherche à évoquer la clarté d\'un matin sans bruit, la fraîcheur qui ne refroidit pas, l\'équilibre retrouvé.',
+  def:{Atmosphère:'Air frais, clarté diffuse',Matière:'Feuille, eau, verre dépoli',Lumière:'Verte, filtrée, matinale',Couleur:'Vert profond',Parfum:'VERTIGO'}},
+ {id:'solaris',nom:'SOLARIS',aura:'Solaire',
+  mots:['Lumière','Chaleur','Peau','Sensualité'],
+  notes:['Ambre solaire','Sable chaud'],
+  pyramide:{tete:[],coeur:[],fond:[]},
+  concentration:'',
+  inci:'',
+  court:'Ambre solaire, sable chaud. La lumière posée sur la peau.',
+  monde:'Solaire, c\'est la lumière quand elle touche la peau. Chaleur, douceur, sensualité sans artifice. SOLARIS en est l\'expression : ambre solaire et sable chaud, une chaleur qui se ressent plus qu\'elle ne se montre.',
+  emotion:'La lumière à hauteur de peau. L\'ambre solaire apporte la chaleur, le sable chaud lui donne sa matière. SOLARIS se porte comme un souvenir d\'été : proche, doux, naturel.',
+  intention:'SOLARIS cherche à évoquer la fin d\'un après-midi, la pierre tiédie, la peau qui garde la lumière.',
+  def:{Atmosphère:'Chaleur lente, fin d\'après-midi',Matière:'Pierre tiédie, sable, peau',Lumière:'Rasante, dorée',Couleur:'Ambre, bronze',Parfum:'SOLARIS'}},
+ {id:'infera',nom:'INFÉRA',aura:'Nocturne',
+  mots:['Profondeur','Intensité','Mystère','Caractère'],
+  notes:['Ambre interdit','Prune givrée','Encens noir'],
+  pyramide:{tete:[],coeur:[],fond:[]},
+  concentration:'',
+  inci:'',
+  court:'Ambre interdit, prune givrée, encens noir. La profondeur, sans élever la voix.',
+  monde:'Nocturne, c\'est ce qui se découvre quand la lumière baisse. Profondeur, intensité, mystère. INFÉRA en est l\'expression : ambre interdit, prune givrée et encens noir, pour une présence qui s\'impose sans bruit.',
+  emotion:'Ce qui reste quand la lumière baisse. L\'ambre interdit, la prune givrée et l\'encens noir composent une présence dense et calme. INFÉRA ne séduit pas par l\'éclat : elle retient.',
+  intention:'INFÉRA cherche à évoquer la pénombre, le silence d\'une pièce éclairée à la flamme, le caractère qui n\'a pas besoin de se prouver.',
+  def:{Atmosphère:'Pénombre, silence',Matière:'Velours, fumée légère, bois sombre',Lumière:'Flamme basse, ombres profondes',Couleur:'Bordeaux nocturne',Parfum:'INFÉRA'}}
+];
+
+const PRODUITS=[
+ {id:'vertigo',aura:'vertigo',nom:'VERTIGO',sous:'Extrait de parfum',format:'50 ml',prix:140},
+ {id:'solaris',aura:'solaris',nom:'SOLARIS',sous:'Extrait de parfum',format:'50 ml',prix:140},
+ {id:'infera',aura:'infera',nom:'INFÉRA',sous:'Extrait de parfum',format:'50 ml',prix:140},
+ {id:'coffret',aura:null,nom:'Coffret Découverte',sous:'Trois flacons de 10 ml, un par Aura',format:'3 × 10 ml',prix:65}
+];
+
+const ARTICLES=[
+ {slug:'naissance-d-une-maison',titre:'La naissance d\'une maison',
+  extrait:'Une conviction simple, et la patience de ne rien précipiter.',
+  texte:[
+   'ORVÉA est née d\'une conviction : le luxe le plus puissant n\'est pas celui qui cherche à se montrer, mais celui qui se ressent.',
+   'Une maison indépendante n\'a pas besoin d\'être grande pour être cohérente. Elle a besoin d\'une intention, d\'un point de vue, et du temps de ne rien précipiter. ORVÉA a choisi de commencer par la parfumerie parce que le parfum est l\'objet le plus intime : invisible, mais présent dans les souvenirs et les moments qui comptent.',
+   'Ce premier chapitre prend la forme d\'une trilogie. Trois fragrances, trois Auras, une même signature. Le Journal est l\'endroit où la maison racontera la suite, à mesure qu\'elle se construit.']},
+ {slug:'pourquoi-trois-auras',titre:'Pourquoi trois Auras ?',
+  extrait:'Nature, Solaire, Nocturne : trois forces qui se complètent.',
+  texte:[
+   'Une Aura n\'est pas une catégorie. C\'est un monde, avec sa lumière, sa matière et son rythme.',
+   'La Nature est une respiration : fraîcheur, équilibre, matière végétale. Le Solaire est une chaleur : la lumière sur la peau, la sensualité sans artifice. Le Nocturne est une profondeur : l\'intensité, le mystère, le caractère.',
+   'Ces trois forces ne s\'opposent pas. Elles se répondent, et c\'est de leur réunion que naît l\'identité de la maison : trois mondes, une seule signature.']},
+ {slug:'comment-nait-une-fragrance',titre:'Comment naît une fragrance ?',
+  extrait:'Derrière un flacon, une intention, des essais, du temps.',
+  texte:[
+   'Une fragrance ne naît pas d\'une formule, mais d\'une direction : ce qu\'elle doit faire ressentir, avant même de savoir avec quelles matières.',
+   'Vient ensuite le travail : chercher, construire, essayer, corriger. Une idée est mise à l\'épreuve, laissée au repos, reprise. Les proportions s\'affinent jusqu\'à ce que l\'ensemble tienne de lui-même.',
+   'Puis il y a le temps. Le mélange repose plusieurs semaines pour que les matières s\'accordent. C\'est une étape discrète, mais c\'est elle qui sépare une composition d\'un simple assemblage.']},
+ {slug:'le-travail-du-coffret',titre:'Le travail du coffret',
+  extrait:'Entrer dans les trois mondes, un par un.',
+  texte:[
+   'L\'idée du coffret est simple : permettre d\'entrer dans la maison à son rythme.',
+   'Le Coffret Découverte réunit trois flacons de 10 ml, un pour chaque Aura. On y entre un monde après l\'autre, sans se presser, avant de choisir celui qui devient le sien.',
+   'C\'est aussi une manière de comprendre la signature d\'ORVÉA : ce qui relie trois fragrances très différentes.']}
+];
+
+const NAV=[
+ ['/','Accueil'],['/maison','La maison'],['/auras','Les Auras'],['/trilogie','La trilogie'],
+ ['/creation','La création'],['/journal','Le Journal'],['/boutique','Boutique'],['/contact','Contact']
+];
+
+/* ------------------------------ Utilitaires ------------------------------ */
+const $=(s,r=document)=>r.querySelector(s);
+const $$=(s,r=document)=>Array.from(r.querySelectorAll(s));
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const eur=n=>new Intl.NumberFormat('fr-FR',{style:'currency',currency:'EUR',minimumFractionDigits:0,maximumFractionDigits:2}).format(n);
+const aura=id=>AURAS.find(a=>a.id===id);
+const prod=id=>PRODUITS.find(p=>p.id===id);
+const REDUCED=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const L=k=>CONFIG.legal[k]?esc(CONFIG.legal[k]):'<span class="todo">[à compléter]</span>';
+const contactEmail=()=>CONFIG.email||CONFIG.legal.email||'';
+let rv=0;
+const d=()=>`style="--d:${(rv++%4)*.12}s"`;
+
+function photo(key,o){
+  o=o||{};
+  const ratio=o.ratio||'4/5',world=o.world||'world-neutral',alt=o.alt||'Photographie ORVÉA';
+  const src=CONFIG.images[key];
+  if(src){
+    return `<figure class="photo ${world}" style="aspect-ratio:${ratio}"><div class="px" data-parallax="0.05"><img src="${esc(src)}" alt="${esc(alt)}" loading="lazy" decoding="async"></div></figure>`;
+  }
+  return `<figure class="photo grain ${world}" style="aspect-ratio:${ratio}" role="img" aria-label="${esc(alt)}"><div class="px" data-parallax="0.05"><div class="atmo"></div></div>${CONFIG.showSlotLabels?`<figcaption>${esc(o.label||'Photographie ORVÉA à venir')}</figcaption>`:''}</figure>`;
+}
+const kw=a=>`<ul class="kw">${a.mots.map(m=>`<li>${m}</li>`).join('')}</ul>`;
+
+/* ------------------------------ Panier ------------------------------ */
+const KEY='orvea-panier-v1';
+let cart={};
+try{const raw=JSON.parse(localStorage.getItem(KEY)||'{}');Object.keys(raw).forEach(k=>{const q=parseInt(raw[k],10);if(prod(k)&&q>0)cart[k]=Math.min(q,20)})}catch(e){cart={}}
+function saveCart(){try{localStorage.setItem(KEY,JSON.stringify(cart))}catch(e){}}
+const lines=()=>Object.keys(cart).map(id=>({p:prod(id),q:cart[id]})).filter(l=>l.p);
+const total=()=>lines().reduce((s,l)=>s+l.p.prix*l.q,0);
+const count=()=>lines().reduce((s,l)=>s+l.q,0);
+function renderCart(){
+  const ls=lines();
+  $('#cart-count').textContent=count()?` (${count()})`:'';
+  $('#cart-body').innerHTML=ls.length?ls.map(({p,q})=>`
+    <div class="ci">
+      <div><h3>${p.nom}</h3><div class="m">${esc(p.sous)}, ${esc(p.format)}</div></div>
+      <div style="text-align:right">${eur(p.prix*q)}</div>
+      <div><span class="qty"><button type="button" data-qty="${p.id}:-1" aria-label="Retirer une unité de ${esc(p.nom)}">−</button><span aria-live="polite">${q}</span><button type="button" data-qty="${p.id}:1" aria-label="Ajouter une unité de ${esc(p.nom)}">+</button></span></div>
+      <div style="text-align:right"><button class="rm" type="button" data-remove="${p.id}">Retirer</button></div>
+    </div>`).join(''):`<p class="muted">Votre collection est vide.</p><p><a class="btn-text" href="#/boutique" data-close-cart>Voir la boutique</a></p>`;
+  $('#cart-foot').innerHTML=ls.length?`
+    <div class="cart-total"><span>Total</span><span>${eur(total())}</span></div>
+    <p class="cart-note">${esc(CONFIG.legal.tva)}. Livraison précisée à la confirmation.</p>
+    <a class="btn solid" href="#/commande" data-close-cart>${CONFIG.mode==='lien'?'Passer à la commande':'Finaliser ma demande'}</a>`:'';
+}
+function addToCart(id,n){const p=prod(id);if(!p)return;cart[id]=Math.min((cart[id]||0)+(n||1),20);if(cart[id]<=0)delete cart[id];saveCart();renderCart()}
+function setQty(id,delta){cart[id]=(cart[id]||0)+delta;if(cart[id]<=0)delete cart[id];if(cart[id]>20)cart[id]=20;saveCart();renderCart()}
+function openCart(){renderCart();$('#cart').inert=false;$('#cart').classList.add('open');$('#scrim').classList.add('open');document.body.classList.add('lock');setTimeout(()=>{const b=$('.cart-x');b&&b.focus()},60)}
+function closeCart(){$('#cart').classList.remove('open');$('#cart').inert=true;$('#scrim').classList.remove('open');if(!$('#menu').classList.contains('open'))document.body.classList.remove('lock')}
+function toggleMenu(force){
+  const m=$('#menu'),open=typeof force==='boolean'?force:!m.classList.contains('open');
+  m.classList.toggle('open',open);m.inert=!open;
+  $$('[data-menu-toggle]').forEach(b=>b.setAttribute('aria-expanded',String(open)));
+  document.body.classList.toggle('lock',open);
+  if(open){const c=$('.menu-close');c&&setTimeout(()=>c.focus(),60)}
+}
+
+/* ------------------------------ Pages ------------------------------ */
+function Home(){
+  rv=0;
+  const tri=AURAS.map(a=>`
+    <a class="panel world-${a.id} grain" href="#/parfum/${a.id}" aria-label="${a.nom}, aura ${a.aura}">
+      <div class="atmo" aria-hidden="true"></div>
+      <div class="panel-in">
+        <span class="aura-tag">${a.aura}</span>
+        <div>
+          <h3>${a.nom}</h3>${kw(a)}
+          <p>${a.court}</p>
+          <span class="btn-text">Explorer</span>
+        </div>
+      </div>
+    </a>`).join('');
+  const rows=AURAS.map((a,i)=>`
+    <div class="row ${i%2?'rev':''} world-${a.id}">
+      <div class="row-a reveal">${photo(a.id,{ratio:'4/5',world:'world-'+a.id,alt:'Ambiance de l\'Aura '+a.aura+' : '+a.nom,label:'Photographie '+a.nom+' à venir'})}</div>
+      <div class="reveal" ${d()}>
+        <span class="aura-tag">${a.aura}</span>
+        <h3 class="pname-big">${a.nom}</h3>
+        <p class="notes">${a.notes.map(n=>`<span>${n}</span>`).join('')}</p>
+        <p class="txt muted">${a.emotion}</p>
+        <a class="btn-text" href="#/parfum/${a.id}">Explorer</a>
+      </div>
+    </div>`).join('');
+  const steps=['Intention','Recherche','Construction olfactive','Essais','Ajustements','Maturation'];
+  return {
+    title:'ORVÉA — Maison indépendante de création | Parfumerie de niche',
+    desc:'ORVÉA, maison indépendante de création. Le parfum est le premier chapitre : une trilogie d\'extraits de parfum, trois Auras — Nature, Solaire, Nocturne — une signature.',
+    html:`
+<section class="hero grain" id="hero" data-world="">
+  <div class="hg hg-v" aria-hidden="true"></div><div class="hg hg-s" aria-hidden="true"></div><div class="hg hg-i" aria-hidden="true"></div>
+  <div class="hero-core" id="hero-core">
+    <h1 class="wordmark">ORVÉA</h1>
+    <p class="hero-sub">Maison indépendante de création</p>
+    <p class="signature"><span>Three Auras. One Signature.</span></p>
+    <div class="cta-row" style="justify-content:center"><a class="btn" href="#/auras">Découvrir les Auras</a><a class="btn-text" href="#/maison">Entrer dans la maison</a></div>
+  </div>
+  <nav class="hero-auras" aria-label="Les trois Auras">
+    ${AURAS.map(a=>`<a class="ha world-${a.id}" href="#/parfum/${a.id}" data-hero-world="${a.id}"><span class="ha-name">${a.nom}</span><span class="ha-aura">${a.aura}</span></a>`).join('')}
+  </nav>
+</section>
+
+<section class="sec tight" id="intro">
+  <div class="wrap narrow center">
+    <hr class="hair reveal">
+    <h2 class="display reveal">Une maison. Trois Auras.</h2>
+    <p class="lead reveal" style="margin-top:28px">Trois expressions d'une même vision.<br>Nature, Solaire et Nocturne composent le premier chapitre d'ORVÉA.</p>
+  </div>
+</section>
+<div class="triptych reveal" id="triptych">${tri}</div>
+
+<section class="sec">
+  <div class="wrap split">
+    <div class="split-a">
+      <h2 class="display reveal">Le parfum est notre premier chapitre.</h2>
+      <p class="lead reveal" style="margin-top:30px">Le parfum est l'objet de luxe le plus intime. Invisible, mais profondément présent.</p>
+      <p class="muted txt reveal">Il accompagne les souvenirs, les émotions et les moments importants. ORVÉA commence par une trilogie : trois fragrances, trois mondes, une même maison.</p>
+      <div class="reveal" style="margin-top:34px"><a class="btn" href="#/trilogie">Découvrir la trilogie</a></div>
+    </div>
+    <div class="reveal">${photo('premier',{ratio:'4/5',alt:'Ambiance de la maison ORVÉA',label:'Photographie ORVÉA à venir'})}</div>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="center" style="margin-bottom:clamp(30px,5vw,70px)"><h2 class="display reveal">La trilogie</h2></div>
+    ${rows}
+  </div>
+</section>
+
+<section class="sec" style="background:var(--graphite)">
+  <div class="wrap split">
+    <div class="reveal">${photo('coffret',{ratio:'5/4',alt:'Le Coffret Découverte ORVÉA',label:'Photographie du coffret à venir'})}</div>
+    <div>
+      <h2 class="display reveal">Trois mondes. Une seule maison.</h2>
+      <p class="lead reveal" style="margin-top:30px">Le Coffret Découverte réunit trois flacons de 10 ml, un pour chaque Aura.</p>
+      <p class="muted txt reveal">On y entre un monde après l'autre, à son rythme, avant de choisir celui qui devient le sien.</p>
+      <ul class="notes reveal" style="margin-top:24px">${AURAS.map(a=>`<li>${a.nom}</li>`).join('')}</ul>
+      <div class="reveal"><a class="btn" href="#/boutique">Découvrir le coffret</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="split" style="align-items:start">
+      <div><h2 class="display reveal">L'art de la création.</h2>
+      <p class="lead reveal" style="margin-top:28px">Derrière une fragrance, il y a plus qu'une formule.</p>
+      <p class="muted txt reveal">Une intention, une recherche, des essais, des ajustements, du temps. Les formules restent celles de la maison ; le travail, lui, se raconte.</p>
+      <div class="reveal" style="margin-top:30px"><a class="btn-text" href="#/creation">Comprendre la création</a></div></div>
+      <ul class="steps reveal">${steps.map(s=>`<li style="grid-template-columns:1fr;padding:20px 0"><h3>${s}</h3></li>`).join('')}</ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec center" style="background:var(--graphite)">
+  <div class="wrap narrow">
+    <hr class="hair reveal">
+    <h2 class="display reveal">Une maison en devenir.</h2>
+    <p class="lead reveal" style="margin-top:28px">ORVÉA commence avec le parfum. Mais le parfum n'est que le premier chapitre.</p>
+    <p class="muted txt reveal">La maison évoluera progressivement vers d'autres créations et d'autres objets, partageant la même exigence et la même philosophie.</p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="reveal" style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:16px;margin-bottom:34px"><h2 class="display">Le Journal ORVÉA</h2><a class="btn-text" href="#/journal">Tout le Journal</a></div>
+    <div class="jlist reveal">${ARTICLES.slice(0,3).map(a=>`<a href="#/journal/${a.slug}"><h3>${a.titre}</h3><p>${a.extrait}</p></a>`).join('')}</div>
+  </div>
+</section>
+
+<section class="sec tight">
+  <div class="wrap">
+    <div class="trust reveal">
+      <a href="#/legal/livraison-retours"><b>Livraison</b><span>Modalités et délais</span></a>
+      <a href="#/legal/livraison-retours"><b>Retours</b><span>Droit de rétractation</span></a>
+      <a href="#/legal/cgv"><b>Conditions de vente</b><span>Commande et paiement</span></a>
+      <a href="#/contact"><b>Nous écrire</b><span>Une question, une demande</span></a>
+    </div>
+  </div>
+</section>
+
+${Newsletter()}`};
+}
+
+function Newsletter(){
+  return `<section class="sec center" style="padding-top:clamp(40px,6vw,80px)">
+  <div class="wrap narrow">
+    <h2 class="title reveal">Suivre la maison</h2>
+    <p class="muted reveal">Les nouvelles d'ORVÉA, rarement, et seulement lorsqu'elles ont quelque chose à dire.</p>
+    <form class="nl reveal" data-form="newsletter" novalidate>
+      <label class="field"><span>Adresse e-mail</span><input type="email" name="email" autocomplete="email" required></label>
+      <button class="btn" type="submit">S'inscrire</button>
+    </form>
+    <p class="status" role="status" aria-live="polite"></p>
+  </div>
+</section>`;
+}
+
+function Maison(){
+  rv=0;
+  const pr=[['L\'intention','plutôt que l\'excès'],['La qualité','plutôt que la quantité'],['La cohérence','plutôt que la multiplication'],['L\'émotion','plutôt que le bruit'],['Le temps','plutôt que la précipitation'],['Une présence discrète','mais mémorable']];
+  return {title:'La maison — ORVÉA, maison indépendante de création',
+  desc:'ORVÉA est une maison indépendante de création. Sa conviction : le luxe le plus puissant n\'est pas celui qui cherche à se montrer, mais celui qui se ressent.',
+  html:`
+<section class="sec page-top center grain" style="min-height:92svh;display:flex;align-items:center;background:radial-gradient(70% 55% at 50% 100%,rgba(216,179,90,.07),transparent 70%)">
+  <div class="wrap narrow"><h1 class="sr">La maison ORVÉA</h1>
+    <hr class="hair reveal">
+    <p class="quote reveal">Le luxe le plus puissant n'est pas celui qui cherche à se montrer, mais celui qui se ressent.</p>
+  </div>
+</section>
+<section class="sec">
+  <div class="wrap split" style="align-items:start">
+    <div><h2 class="display reveal">Une maison indépendante de création.</h2></div>
+    <div>
+      <p class="lead reveal">ORVÉA ne cherche pas à être la marque la plus visible. Elle cherche à devenir une maison reconnaissable par son univers, sa cohérence et ses créations.</p>
+      <p class="muted txt reveal">Elle commence par la parfumerie de niche, premier chapitre d'une vision qui dépasse le parfum. Chaque création, quelle qu'elle soit, partagera la même philosophie : dire peu, mais le dire juste.</p>
+    </div>
+  </div>
+</section>
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <h2 class="title reveal" style="margin-bottom:34px">Ce que la maison choisit</h2>
+    <ul class="principles reveal">${pr.map(p=>`<li><b>${p[0]}</b><span>${p[1]}</span></li>`).join('')}</ul>
+  </div>
+</section>
+<section class="sec" style="background:var(--graphite)">
+  <div class="wrap split">
+    <div class="reveal">${photo('maison',{ratio:'4/5',alt:'L\'univers de la maison ORVÉA',label:'Photographie ORVÉA à venir'})}</div>
+    <div>
+      <h2 class="display reveal">Trois Auras.<br>Une signature.</h2>
+      <p class="lead reveal" style="margin-top:28px">Nature, Solaire, Nocturne : trois forces qui structurent toute la création.</p>
+      <p class="muted txt reveal">Chaque Aura est un monde, avec sa lumière, sa matière, son rythme. Ensemble, elles forment l'identité de la maison.</p>
+      <div class="reveal" style="margin-top:30px"><a class="btn" href="#/auras">Découvrir les Auras</a></div>
+    </div>
+  </div>
+</section>
+<section class="sec center">
+  <div class="wrap narrow"><hr class="hair reveal"><h2 class="display reveal">Une maison en devenir.</h2>
+    <p class="lead reveal" style="margin-top:28px">ORVÉA commence avec le parfum. Mais le parfum n'est que le premier chapitre.</p>
+    <p class="muted txt reveal">D'autres créations viendront, progressivement, sans précipitation et sans promesse hâtive.</p></div>
+</section>`};
+}
+
+function Auras(){
+  rv=0;
+  let prev='#0A0A0A';
+  const secs=AURAS.map(a=>{
+    const bg={vertigo:'#0A120E',solaris:'#140D06',infera:'#12070B'}[a.id];
+    const html=`
+<section class="world-sec world-${a.id} grain" style="--prev:${prev}" aria-labelledby="h-${a.id}">
+  <div class="atmo" aria-hidden="true"></div>
+  <div class="wrap split" style="align-items:center">
+    <div>
+      <p class="aura-word reveal" aria-hidden="true">${a.aura}</p>
+      <h2 class="pname reveal" id="h-${a.id}" style="margin:6px 0 20px">${a.nom}</h2>
+      ${kw(a)}
+      <p class="lead reveal" style="max-width:30em">${a.monde}</p>
+      <dl class="dl reveal">${Object.keys(a.def).map(k=>`<div><dt>${k}</dt><dd>${a.def[k]}</dd></div>`).join('')}</dl>
+      <a class="btn" href="#/parfum/${a.id}">Découvrir ${a.nom}</a>
+    </div>
+    <div class="reveal">${photo(a.id,{ratio:'4/5',world:'world-'+a.id,alt:'Ambiance de l\'Aura '+a.aura,label:'Photographie '+a.nom+' à venir'})}</div>
+  </div>
+</section>`;
+    prev=bg;return html;
+  }).join('');
+  return {title:'Les Auras — Nature, Solaire, Nocturne | ORVÉA',
+  desc:'Trois Auras structurent ORVÉA : Nature (VERTIGO), Solaire (SOLARIS) et Nocturne (INFÉRA). Trois mondes, une même maison.',
+  html:`
+<section class="sec page-top center" style="padding-bottom:clamp(60px,8vw,110px)">
+  <div class="wrap narrow"><hr class="hair reveal"><h1 class="display reveal">Trois Auras.<br>Trois mondes.</h1>
+  <p class="lead reveal" style="margin-top:28px">Une Aura n'est pas une catégorie. C'est un monde, avec sa lumière, sa matière et son rythme.</p></div>
+</section>${secs}`};
+}
+
+function Trilogie(){
+  rv=0;
+  let prev='#0A0A0A';
+  const bands=AURAS.map(a=>{
+    const bg={vertigo:'#0A120E',solaris:'#140D06',infera:'#12070B'}[a.id];
+    const p=prod(a.id);
+    const h=`
+<section class="world-sec world-${a.id} grain" style="--prev:${prev};min-height:78svh" aria-labelledby="t-${a.id}">
+  <div class="atmo" aria-hidden="true"></div>
+  <div class="wrap" style="display:grid;gap:34px 80px;align-items:end" >
+    <div>
+      <span class="aura-tag reveal">${a.aura}</span>
+      <h2 class="pname-big reveal" id="t-${a.id}">${a.nom}</h2>
+      <p class="notes reveal">${a.notes.map(n=>`<span>${n}</span>`).join('')}</p>
+      <p class="lead reveal" style="max-width:30em">${a.emotion}</p>
+      <p class="price reveal">${eur(p.prix)}<small>${p.sous}, ${p.format}</small></p>
+      <div class="cta-row reveal"><a class="btn" href="#/parfum/${a.id}">Découvrir</a><button class="btn-text" type="button" data-add="${a.id}">Ajouter à la collection</button></div>
+    </div>
+  </div>
+</section>`;
+    prev=bg;return h;
+  }).join('');
+  return {title:'La trilogie — VERTIGO, SOLARIS, INFÉRA | Extraits de parfum ORVÉA',
+  desc:'La trilogie ORVÉA : VERTIGO (Nature), SOLARIS (Solaire), INFÉRA (Nocturne). Trois extraits de parfum de niche réunis par une même signature.',
+  html:`
+<section class="sec page-top center" style="padding-bottom:clamp(60px,8vw,110px)">
+  <div class="wrap narrow"><hr class="hair reveal"><h1 class="display reveal">La trilogie</h1>
+  <p class="lead reveal" style="margin-top:28px">Trois fragrances. Un accord signature, discret, traverse les trois : c'est lui qui fait appartenir trois mondes si différents à la même maison.</p></div>
+</section>${bands}`};
+}
+
+function Creation(){
+  rv=0;
+  const st=[
+   ['Intention','Tout commence par une direction : ce que la fragrance doit faire ressentir, avant même de savoir avec quelles matières. Une émotion, une lumière, une manière d\'être présent.'],
+   ['Recherche','Vient ensuite la recherche : matières, accords, contrastes, références. Comprendre ce qui existe pour savoir ce qui manque.'],
+   ['Construction olfactive','La fragrance se construit en couches, du plus léger au plus profond, pour qu\'elle évolue sur la peau plutôt qu\'elle ne s\'impose d\'un seul coup.'],
+   ['Essais','Chaque idée est mise à l\'épreuve. On compose, on sent, on laisse reposer, on recommence.'],
+   ['Ajustements','Une formule se corrige. Des matières sont retirées, des proportions affinées, jusqu\'à ce que l\'ensemble tienne de lui-même.'],
+   ['Maturation','Le temps fait partie de la composition. Le mélange repose plusieurs semaines pour que les matières s\'accordent, avant d\'être filtré puis mis en flacon.'],
+   ['L\'objet tout entier','La fragrance n\'est qu\'une part de l\'objet. Son nom, son flacon, son coffret, sa lumière appartiennent au même geste, et doivent dire la même chose.']
+  ];
+  return {title:'La création — Comment naît une fragrance ORVÉA',
+  desc:'Intention, recherche, construction olfactive, essais, ajustements, maturation : le travail qui précède chaque fragrance ORVÉA.',
+  html:`
+<section class="sec page-top" style="padding-bottom:clamp(40px,6vw,80px)">
+  <div class="wrap split" style="align-items:end">
+    <div><hr class="hair reveal"><h1 class="display reveal">L'art de la création.</h1></div>
+    <p class="lead reveal">Derrière une fragrance, il y a plus qu'une formule : une intention, un travail, du temps. Les formules restent celles de la maison. Le geste, lui, se raconte.</p>
+  </div>
+</section>
+<section class="sec" style="padding-top:clamp(30px,4vw,60px)">
+  <div class="wrap"><ul class="steps">${st.map(s=>`<li class="reveal"><h3>${s[0]}</h3><p>${s[1]}</p></li>`).join('')}</ul></div>
+</section>
+<section class="sec" style="padding-top:0"><div class="wrap">${photo('creation',{ratio:'21/9',alt:'Le travail de création ORVÉA',label:'Photographie du travail de création à venir'})}</div></section>
+<section class="sec center" style="background:var(--graphite)">
+  <div class="wrap narrow"><h2 class="display reveal">Moins de bruit. Plus de présence.</h2>
+  <div class="reveal" style="margin-top:34px"><a class="btn" href="#/trilogie">Découvrir la trilogie</a></div></div>
+</section>`};
+}
+
+function Journal(){
+  rv=0;
+  return {title:'Le Journal ORVÉA — Coulisses d\'une maison indépendante',
+  desc:'Le Journal ORVÉA : la naissance de la maison, les Auras, la création des fragrances, le coffret.',
+  html:`
+<section class="sec page-top">
+  <div class="wrap">
+    <hr class="hair reveal"><h1 class="display reveal">Le Journal ORVÉA</h1>
+    <p class="lead reveal" style="margin:26px 0 clamp(40px,6vw,80px);max-width:30em">Les coulisses d'une maison qui se construit.</p>
+    <div class="jlist reveal">${ARTICLES.map(a=>`<a href="#/journal/${a.slug}"><h2 style="font-size:clamp(26px,3vw,40px)">${a.titre}</h2><p>${a.extrait}</p></a>`).join('')}</div>
+  </div>
+</section>`};
+}
+
+function Article(slug){
+  const a=ARTICLES.find(x=>x.slug===slug);if(!a)return null;
+  const i=ARTICLES.indexOf(a),n=ARTICLES[(i+1)%ARTICLES.length];
+  rv=0;
+  return {title:a.titre+' — Le Journal ORVÉA',desc:a.extrait,
+  html:`
+<article class="sec page-top article">
+  <div class="wrap narrow">
+    <a class="btn-text" href="#/journal">Le Journal</a>
+    <h1 class="display" style="margin:38px 0 40px">${a.titre}</h1>
+    ${a.texte.map(t=>`<p class="reveal">${t}</p>`).join('')}
+    <div style="margin-top:70px;padding-top:30px;border-top:1px solid var(--line)"><span class="muted small">À lire ensuite</span><p style="margin:8px 0 0;font:400 28px var(--serif)"><a href="#/journal/${n.slug}" style="font-size:inherit;font-family:inherit;line-height:1.2">${n.titre}</a></p></div>
+  </div>
+</article>`};
+}
+
+function Boutique(){
+  rv=0;
+  const rowsHtml=PRODUITS.map(p=>{
+    const a=p.aura?aura(p.aura):null;
+    return `<div class="shop-row reveal ${a?'world-'+a.id:''}">
+      <div>${a?`<span class="aura-tag">${a.aura}</span>`:`<span class="aura-tag" style="color:var(--gold)">Découverte</span>`}
+        <h2 style="font-size:clamp(28px,3.4vw,44px);letter-spacing:.08em"><a href="${a?'#/parfum/'+a.id:'#/auras'}">${p.nom}</a></h2>
+        <p class="muted" style="margin:8px 0 0">${a?a.notes.join(', '):'VERTIGO, SOLARIS, INFÉRA'}</p></div>
+      <div><p style="margin:0">${esc(p.sous)}</p><p class="muted" style="margin:0">${esc(p.format)}</p></div>
+      <div class="shop-act"><span class="price" style="margin:0">${eur(p.prix)}</span><button class="btn" type="button" data-add="${p.id}">Ajouter à la collection</button></div>
+    </div>`}).join('');
+  return {title:'Boutique — Extraits de parfum ORVÉA',
+  desc:'La collection ORVÉA : VERTIGO, SOLARIS, INFÉRA en extrait de parfum 50 ml, et le Coffret Découverte de trois flacons de 10 ml.',
+  html:`
+<section class="sec page-top">
+  <div class="wrap">
+    <hr class="hair reveal"><h1 class="display reveal">Boutique</h1>
+    <p class="lead reveal" style="margin:26px 0 clamp(40px,6vw,80px);max-width:30em">La collection ORVÉA : trois extraits de parfum, et un coffret pour les découvrir.</p>
+    ${rowsHtml}
+    <p class="muted small reveal" style="margin-top:28px">${esc(CONFIG.legal.tva)}. ${CONFIG.mode==='lien'?'Le règlement s\'effectue après confirmation de votre commande.':'Chaque demande est confirmée par ORVÉA avant tout paiement.'} <a href="#/legal/livraison-retours" style="text-decoration:underline;text-underline-offset:4px">Livraison et retours</a>.</p>
+  </div>
+</section>`};
+}
+
+function Produit(id){
+  const a=aura(id);if(!a)return null;
+  const p=prod(id);rv=0;
+  const others=AURAS.filter(x=>x.id!==id);
+  const pyr=a.pyramide,hasPyr=pyr.tete.length||pyr.coeur.length||pyr.fond.length;
+  const pyrHtml=hasPyr?`<div class="pyr">${[['Tête',pyr.tete],['Cœur',pyr.coeur],['Fond',pyr.fond]].map(c=>`<div><h4>${c[0]}</h4><ul>${c[1].map(n=>`<li>${n}</li>`).join('')}</ul></div>`).join('')}</div>`
+   :`<div class="pyr"><div style="grid-column:1/-1"><h4>Notes principales</h4><ul>${a.notes.map(n=>`<li>${n}</li>`).join('')}</ul></div></div>`;
+  return {title:`${a.nom} — Extrait de parfum ${a.aura} | ORVÉA`,
+  desc:`${a.nom}, extrait de parfum ORVÉA, Aura ${a.aura}. ${a.notes.join(', ')}. ${a.court}`,
+  html:`
+<div class="world-${id}">
+<section class="p-hero grain">
+  <div class="atmo" aria-hidden="true"></div>
+  <div class="wrap">
+    <span class="aura-tag reveal">${a.aura}</span>
+    <h1 class="p-name reveal">${a.nom}</h1>
+    ${kw(a)}
+    <p class="lead reveal" style="max-width:28em">${a.emotion}</p>
+    <div class="buy reveal">
+      <span class="price">${eur(p.prix)}<small>${p.sous}, ${p.format}</small></span>
+      <button class="btn solid" type="button" data-add="${id}">Ajouter à la collection</button>
+    </div>
+  </div>
+</section>
+<section class="sec">
+  <div class="wrap split" style="align-items:start">
+    <div class="reveal">${photo(id,{ratio:'4/5',world:'world-'+id,alt:'Ambiance de '+a.nom,label:'Photographie '+a.nom+' à venir'})}</div>
+    <div>
+      <h2 class="title reveal">Les notes</h2>
+      ${pyrHtml}
+      <h2 class="title reveal" style="margin-top:clamp(50px,7vw,90px)">L'expérience</h2>
+      <p class="muted txt reveal" style="margin-top:20px">${a.intention} Comme toute composition construite en couches, elle se découvre dans le temps : l'ouverture, puis le cœur, puis un fond qui s'installe. Un accord signature, commun aux trois fragrances de la maison, la relie à ORVÉA.</p>
+      <dl class="dl reveal"><div><dt>Aura</dt><dd>${a.aura}</dd></div><div><dt>Produit</dt><dd>${p.sous}</dd></div><div><dt>Format</dt><dd>${p.format}</dd></div>${a.concentration?`<div><dt>Concentration</dt><dd>${esc(a.concentration)}</dd></div>`:''}<div><dt>Prix</dt><dd>${eur(p.prix)}, ${esc(CONFIG.legal.tva)}</dd></div></dl>
+      <details class="acc reveal"><summary>Composition et informations réglementaires</summary>${a.inci?`<p>${esc(a.inci)}</p>`:`<p>La liste complète des ingrédients (INCI) et les informations réglementaires figureront ici, ainsi que sur l'emballage.</p>`}</details>
+    </div>
+  </div>
+</section>
+</div>
+<section class="sec tight" style="padding-bottom:0"><div class="wrap"><h2 class="title reveal" style="margin-bottom:30px">Les deux autres mondes</h2></div></section>
+<div class="mini reveal" style="margin-top:0">${others.map(o=>`<a class="world-${o.id} grain" href="#/parfum/${o.id}"><div class="atmo" aria-hidden="true"></div><span class="aura-tag">${o.aura}</span><h3 class="pname" style="margin:14px 0 12px">${o.nom}</h3><p class="muted" style="max-width:30ch">${o.court}</p><span class="btn-text">Explorer</span></a>`).join('')}</div>`};
+}
+
+function Contact(){
+  rv=0;
+  const mail=contactEmail();
+  return {title:'Contact — ORVÉA',desc:'Une question, une demande ? Écrire à la maison ORVÉA.',
+  html:`
+<section class="sec page-top">
+  <div class="wrap split" style="align-items:start">
+    <div><hr class="hair reveal"><h1 class="display reveal">Contact</h1>
+      <p class="lead reveal" style="margin-top:26px;max-width:24em">Une question, une demande, une rencontre : écrivez à la maison.</p>
+      <div class="reveal muted" style="margin-top:30px">
+        ${mail?`<p style="margin-bottom:8px"><a href="mailto:${esc(mail)}" style="color:var(--ivory);border-bottom:1px solid rgba(216,179,90,.55)">${esc(mail)}</a></p>`:''}
+        ${CONFIG.whatsapp?`<p style="margin-bottom:8px"><a href="https://wa.me/${esc(CONFIG.whatsapp)}" rel="noopener" style="color:var(--ivory);border-bottom:1px solid rgba(216,179,90,.55)">WhatsApp</a></p>`:''}
+        <p>Joué-lès-Tours, France</p>
+      </div></div>
+    <div class="reveal">
+      <form data-form="contact" novalidate>
+        <div class="form-grid">
+          <label class="field"><span>Nom</span><input name="nom" autocomplete="name" required></label>
+          <label class="field"><span>Adresse e-mail</span><input type="email" name="email" autocomplete="email" required></label>
+          <label class="field full"><span>Sujet</span><input name="sujet"></label>
+          <label class="field full"><span>Message</span><textarea name="message" required></textarea></label>
+        </div>
+        <button class="btn solid" type="submit">Envoyer</button>
+        <p class="status" role="status" aria-live="polite"></p>
+        <p class="muted small">Les informations transmises servent uniquement à répondre à votre message. <a href="#/legal/confidentialite" style="text-decoration:underline;text-underline-offset:4px">Confidentialité</a>.</p>
+      </form>
+    </div>
+  </div>
+</section>`};
+}
+
+function Commande(){
+  rv=0;
+  const ls=lines();
+  if(!ls.length)return {title:'Commande — ORVÉA',desc:'Finaliser votre commande ORVÉA.',html:`<section class="sec page-top center"><div class="wrap narrow"><h1 class="display">Votre collection est vide.</h1><p class="muted" style="margin:24px 0 34px">Ajoutez une fragrance ou le coffret pour finaliser une commande.</p><a class="btn" href="#/boutique">Voir la boutique</a></div></section>`};
+  const lien=CONFIG.mode==='lien'&&CONFIG.paymentUrl;
+  return {title:'Commande — ORVÉA',desc:'Finaliser votre commande ORVÉA.',
+  html:`
+<section class="sec page-top">
+  <div class="wrap split" style="align-items:start">
+    <div>
+      <hr class="hair"><h1 class="display">${CONFIG.mode==='lien'?'Commande':'Votre demande'}</h1>
+      <p class="muted" style="margin:22px 0 40px;max-width:40ch">${CONFIG.mode==='lien'?'Renseignez vos coordonnées. Votre commande nous est transmise, puis vous pouvez la régler.':'Renseignez vos coordonnées. Votre demande est transmise à la maison, qui la confirme avant tout paiement.'}</p>
+      <form data-form="commande" novalidate>
+        <div class="form-grid">
+          <label class="field"><span>Nom et prénom</span><input name="nom" autocomplete="name" required></label>
+          <label class="field"><span>Adresse e-mail</span><input type="email" name="email" autocomplete="email" required></label>
+          <label class="field"><span>Téléphone</span><input type="tel" name="tel" autocomplete="tel"></label>
+          <label class="field"><span>Pays</span><input name="pays" autocomplete="country-name" value="France"></label>
+          <label class="field full"><span>Adresse de livraison</span><input name="adresse" autocomplete="street-address" required></label>
+          <label class="field"><span>Code postal</span><input name="cp" autocomplete="postal-code" required></label>
+          <label class="field"><span>Ville</span><input name="ville" autocomplete="address-level2" required></label>
+          <label class="field full"><span>Message (facultatif)</span><textarea name="message"></textarea></label>
+        </div>
+        <label style="display:flex;gap:12px;align-items:flex-start;margin:6px 0 28px;font-size:14px;color:var(--gray)"><input type="checkbox" name="cgv" required style="margin-top:5px"><span>J'ai lu et j'accepte les <a href="#/legal/cgv" style="text-decoration:underline;text-underline-offset:4px;color:var(--ivory)">conditions générales de vente</a>.</span></label>
+        <div class="cta-row"><button class="btn solid" type="submit">Envoyer ${CONFIG.mode==='lien'?'ma commande':'ma demande'} par e-mail</button>${CONFIG.whatsapp?`<button class="btn" type="button" data-wa>Envoyer par WhatsApp</button>`:''}${lien?`<a class="btn" href="${esc(CONFIG.paymentUrl)}" target="_blank" rel="noopener">Régler en ligne</a>`:''}</div>
+        <p class="status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+    <div class="reveal">
+      <h2 class="title" style="margin-bottom:24px">Votre collection</h2>
+      <div class="summary">
+        ${ls.map(({p,q})=>`<div class="l"><span>${p.nom} <span class="muted">× ${q}</span><br><span class="muted small">${esc(p.sous)}, ${esc(p.format)}</span></span><span>${eur(p.prix*q)}</span></div>`).join('')}
+        <div class="l"><span class="muted">Livraison</span><span class="muted">Précisée à la confirmation</span></div>
+        <div class="l t"><span>Total</span><span>${eur(total())}</span></div>
+      </div>
+      <p class="muted small" style="margin-top:14px">${esc(CONFIG.legal.tva)}.</p>
+    </div>
+  </div>
+</section>`};
+}
+
+function Legal(slug){
+  rv=0;
+  const pages={
+  'mentions':{t:'Mentions légales',h:`
+<h2>Éditeur du site</h2>
+<p>${L('raisonSociale')}, ${L('forme')}.<br>SIREN : ${L('siren')}<br>SIRET : ${L('siret')}<br>${L('tva')}.<br>Adresse : ${L('adresse')}<br>Courriel : ${CONFIG.legal.email?esc(CONFIG.legal.email):(CONFIG.email?esc(CONFIG.email):'<span class="todo">[à compléter]</span>')}<br>Téléphone : ${L('telephone')}</p>
+<h2>Directeur de la publication</h2><p>${L('directeurPublication')}</p>
+<h2>Hébergement</h2><p>${L('hebergeur')}</p>
+<h2>Propriété intellectuelle</h2><p>La marque ORVÉA, le logo, les textes, les visuels et l'ensemble des contenus de ce site sont protégés. Toute reproduction ou réutilisation, totale ou partielle, sans autorisation écrite préalable est interdite.</p>
+<h2>Responsabilité</h2><p>ORVÉA s'efforce de fournir des informations exactes et à jour, sans garantie d'exhaustivité. Le site peut contenir des liens vers des sites tiers dont ORVÉA ne contrôle pas le contenu.</p>
+<h2>Données personnelles</h2><p>Voir la <a href="#/legal/confidentialite" style="text-decoration:underline;text-underline-offset:4px">politique de confidentialité</a>.</p>`},
+  'cgv':{t:'Conditions générales de vente',h:`
+<h2>1. Objet</h2><p>Les présentes conditions régissent les ventes de produits ORVÉA proposés sur ce site à des consommateurs. Vendeur : ${L('raisonSociale')}, ${L('forme')}, SIRET ${L('siret')}.</p>
+<h2>2. Produits et prix</h2><p>Les produits sont décrits sur le site avec le plus grand soin. Les prix sont indiqués en euros. ${L('tva')}. Le prix applicable est celui affiché au moment de la demande de commande.</p>
+<h2>3. Commande</h2><p>Toute commande vaut demande adressée à ORVÉA. La vente est conclue lorsque ORVÉA confirme la commande, sous réserve de disponibilité des produits. En cas d'indisponibilité, le client en est informé et aucune somme n'est prélevée.</p>
+<h2>4. Paiement</h2><p>Les modalités de paiement sont communiquées lors de la confirmation de la commande. Les produits restent la propriété d'ORVÉA jusqu'à complet paiement.</p>
+<h2>5. Livraison</h2><p>Les modalités, délais et frais de livraison sont indiqués au client avant tout paiement. Voir la page <a href="#/legal/livraison-retours" style="text-decoration:underline;text-underline-offset:4px">Livraison et retours</a>.</p>
+<h2>6. Droit de rétractation</h2><p>Le client dispose de 14 jours à compter de la réception de sa commande pour exercer son droit de rétractation, sans avoir à justifier de motif, en notifiant sa décision à ORVÉA de manière non équivoque. Les produits doivent être renvoyés dans les 14 jours suivant la notification, dans leur état d'origine. Le remboursement intervient au plus tard 14 jours après réception de la demande de rétractation, ou après récupération des produits.</p>
+<p>Conformément à l'article L221-28 du Code de la consommation, le droit de rétractation ne peut être exercé pour les produits descellés après la livraison et qui ne peuvent être renvoyés pour des raisons d'hygiène ou de protection de la santé.</p>
+<h2>7. Garanties légales</h2><p>Le client bénéficie de la garantie légale de conformité et de la garantie des vices cachés, dans les conditions prévues par le Code de la consommation et le Code civil.</p>
+<h2>8. Utilisation des produits</h2><p>Les parfums sont destinés à un usage externe. Les produits sont à tenir à l'écart de la chaleur et des flammes, et hors de portée des enfants. Les informations réglementaires figurent sur l'emballage.</p>
+<h2>9. Données personnelles</h2><p>Les données recueillies sont traitées conformément à la <a href="#/legal/confidentialite" style="text-decoration:underline;text-underline-offset:4px">politique de confidentialité</a>.</p>
+<h2>10. Médiation</h2><p>En cas de litige, le client peut recourir gratuitement à un médiateur de la consommation : ${L('mediateur')}.</p>
+<h2>11. Droit applicable</h2><p>Les présentes conditions sont soumises au droit français.</p>`},
+  'livraison-retours':{t:'Livraison et retours',h:`
+<h2>Livraison</h2><p>Les modalités, délais et frais de livraison sont confirmés par ORVÉA lors de la validation de la commande, avant tout paiement. Chaque commande est préparée avec soin.</p>
+<h2>Retours et rétractation</h2><p>Vous disposez de 14 jours à compter de la réception pour vous rétracter. Pour cela, écrivez-nous en indiquant votre numéro de commande. Les produits descellés ne peuvent pas être repris pour des raisons d'hygiène ou de protection de la santé, conformément à l'article L221-28 du Code de la consommation.</p>
+<h2>Un produit endommagé ?</h2><p>Contactez-nous rapidement, avec une photographie, afin que nous trouvions une solution.</p>
+<p><a class="btn-text" href="#/contact">Nous écrire</a></p>`},
+  'confidentialite':{t:'Politique de confidentialité',h:`
+<h2>Responsable du traitement</h2><p>${L('raisonSociale')}, ${L('forme')}, SIREN ${L('siren')}.</p>
+<h2>Données collectées</h2><p>Lorsque vous nous écrivez, vous inscrivez à la newsletter ou transmettez une demande de commande : nom, adresse e-mail, téléphone, adresse de livraison et contenu de votre message.</p>
+<h2>Finalités</h2><ul><li>répondre à vos messages et demandes ;</li><li>traiter et suivre vos commandes ;</li><li>vous envoyer la newsletter, si vous vous y êtes inscrit(e).</li></ul>
+<h2>Conservation</h2><p>Les données sont conservées pendant la durée nécessaire à ces finalités, puis pendant les durées légales applicables (notamment comptables pour les commandes).</p>
+<h2>Vos droits</h2><p>Vous disposez d'un droit d'accès, de rectification, d'effacement, d'opposition et de limitation. Pour l'exercer, écrivez-nous : ${contactEmail()?esc(contactEmail()):'<span class="todo">[adresse à compléter]</span>'}. Vous pouvez également saisir la CNIL (cnil.fr).</p>
+<h2>Cookies et stockage local</h2><p>Ce site n'utilise ni cookie publicitaire ni outil de mesure d'audience. Le contenu de votre panier est conservé dans le stockage local de votre navigateur, uniquement pour le bon fonctionnement du site.</p>`}
+  };
+  const pg=pages[slug];if(!pg)return null;
+  return {title:pg.t+' — ORVÉA',desc:pg.t+' du site ORVÉA.',
+  html:`<section class="sec page-top"><div class="wrap narrow prose"><hr class="hair"><h1 class="display" style="margin-bottom:34px">${pg.t}</h1>${pg.h}</div></section>`};
+}
+
+function NotFound(){
+  return {title:'Page introuvable — ORVÉA',desc:'Cette page n\'existe pas.',html:`<section class="sec page-top center" style="min-height:80svh"><div class="wrap narrow"><h1 class="display">Cette page n'existe pas.</h1><p class="muted" style="margin:24px 0 34px">Elle a peut-être changé d'adresse.</p><a class="btn" href="#/">Retour à l'accueil</a></div></section>`};
+}
+
+/* ------------------------------ Routeur ------------------------------ */
+const ROUTES=[
+ [/^\/?$/,Home],[/^\/maison$/,Maison],[/^\/auras$/,Auras],[/^\/trilogie$/,Trilogie],[/^\/creation$/,Creation],
+ [/^\/journal$/,Journal],[/^\/journal\/([a-z0-9-]+)$/,Article],[/^\/boutique$/,Boutique],[/^\/parfum\/([a-z]+)$/,Produit],
+ [/^\/contact$/,Contact],[/^\/commande$/,Commande],[/^\/legal\/([a-z-]+)$/,Legal]
+];
+const getPath=()=>(location.hash.replace(/^#/,'')||'/').split('?')[0];
+function setMeta(title,desc){
+  document.title=title;
+  const m=$('meta[name="description"]');if(m)m.setAttribute('content',desc);
+  const t=$('meta[property="og:title"]');if(t)t.setAttribute('content',title);
+  const o=$('meta[property="og:description"]');if(o)o.setAttribute('content',desc);
+}
+function activeNav(p){
+  let key=p;
+  if(/^\/parfum\//.test(p))key='/trilogie';
+  if(/^\/journal\//.test(p))key='/journal';
+  $$('#nav a,#menu-nav a').forEach(a=>{
+    if(a.getAttribute('data-path')===key)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');
+  });
+}
+function render(){
+  const p=getPath();let r=null;
+  for(const [re,fn] of ROUTES){const m=p.match(re);if(m){r=fn.apply(null,m.slice(1));break}}
+  if(!r)r=NotFound();
+  const main=$('#main');
+  main.innerHTML=r.html;
+  main.classList.remove('enter');void main.offsetWidth;main.classList.add('enter');
+  setMeta(r.title,r.desc);
+  activeNav(p);
+  toggleMenu(false);closeCart();
+  try{window.scrollTo(0,0)}catch(e){}
+  initReveal();initHero();onScroll();
+}
+
+/* ------------------------------ Effets ------------------------------ */
+let io=null;
+function initReveal(){
+  const els=$$('.reveal');
+  if(io){io.disconnect();io=null}
+  if(REDUCED||!('IntersectionObserver' in window)){els.forEach(e=>e.classList.add('in'));return}
+  io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+  els.forEach(e=>io.observe(e));
+}
+function initHero(){
+  const hero=$('#hero');if(!hero)return;
+  $$('[data-hero-world]',hero).forEach(a=>{
+    const on=()=>{hero.dataset.world=a.getAttribute('data-hero-world')},off=()=>{hero.dataset.world=''};
+    a.addEventListener('mouseenter',on);a.addEventListener('focus',on);a.addEventListener('mouseleave',off);a.addEventListener('blur',off);
+  });
+}
+let ticking=false;
+function onScroll(){
+  if(ticking)return;ticking=true;
+  requestAnimationFrame(()=>{
+    ticking=false;
+    const y=window.pageYOffset||0,vh=window.innerHeight||800;
+    $('#site-header').classList.toggle('solid',y>40);
+    if(REDUCED)return;
+    const core=$('#hero-core');
+    if(core&&y<vh*1.2){core.style.transform=`translate3d(0,${y*.14}px,0)`;core.style.opacity=String(Math.max(0,1-y/(vh*.85)))}
+    $$('[data-parallax]').forEach(el=>{
+      const r=el.parentElement.getBoundingClientRect();
+      if(r.bottom<-100||r.top>vh+100)return;
+      const k=parseFloat(el.getAttribute('data-parallax'))||0;
+      el.style.transform=`translate3d(0,${(r.top+r.height/2-vh/2)*-k}px,0)`;
+    });
+  });
+}
+
+/* ------------------------------ Formulaires ------------------------------ */
+function msgStatus(form,txt){const s=$('.status',form)||$('.status',form.parentElement);if(s)s.textContent=txt}
+function send(form,subject,body,replyTo){
+  if(CONFIG.formEndpoint){
+    msgStatus(form,'Envoi en cours…');
+    return fetch(CONFIG.formEndpoint,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({subject:subject,message:body,email:replyTo})})
+      .then(r=>{if(!r.ok)throw 0;msgStatus(form,'Merci. Votre message a bien été envoyé.');form.reset()})
+      .catch(()=>msgStatus(form,'L\'envoi a échoué. Merci de réessayer ou de nous écrire directement.'));
+  }
+  const to=contactEmail();
+  if(to){
+    location.href='mailto:'+to+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+    msgStatus(form,'Votre application de messagerie s\'ouvre avec le message prêt à envoyer. Il ne reste qu\'à l\'envoyer.');
+  }else{
+    msgStatus(form,'Le formulaire n\'est pas encore relié à une adresse de réception. Merci de revenir bientôt.');
+  }
+}
+function orderText(f){
+  const ls=lines();
+  return ['Bonjour ORVÉA,','',CONFIG.mode==='lien'?'Voici ma commande :':'Voici ma demande de commande :','',
+   ...ls.map(({p,q})=>`- ${p.nom} (${p.sous}, ${p.format}) × ${q} : ${eur(p.prix*q)}`),
+   '','Total : '+eur(total())+' ('+CONFIG.legal.tva+')','',
+   'Nom : '+f.nom.value,'E-mail : '+f.email.value,'Téléphone : '+(f.tel.value||'-'),
+   'Livraison : '+f.adresse.value+', '+f.cp.value+' '+f.ville.value+', '+f.pays.value,
+   f.message.value?('\nMessage : '+f.message.value):'' ,'','J\'ai lu et j\'accepte les conditions générales de vente.'].join('\n');
+}
+document.addEventListener('submit',e=>{
+  const f=e.target.closest('form[data-form]');if(!f)return;
+  e.preventDefault();
+  if(!f.reportValidity())return;
+  const k=f.getAttribute('data-form');
+  if(k==='contact'){
+    send(f,'Message via le site ORVÉA'+(f.sujet.value?' — '+f.sujet.value:''),'Nom : '+f.nom.value+'\nE-mail : '+f.email.value+'\n\n'+f.message.value,f.email.value);
+  }else if(k==='newsletter'){
+    send(f,'Inscription à la newsletter ORVÉA','Merci d\'inscrire cette adresse à la newsletter : '+f.email.value,f.email.value);
+  }else if(k==='commande'){
+    send(f,(CONFIG.mode==='lien'?'Commande':'Demande de commande')+' ORVÉA — '+f.nom.value,orderText(f),f.email.value);
+  }
+});
+
+/* ------------------------------ Événements ------------------------------ */
+document.addEventListener('click',e=>{
+  const t=e.target.closest('[data-add],[data-qty],[data-remove],[data-open-cart],[data-close-cart],[data-menu-toggle],[data-wa]');
+  if(!t)return;
+  if(t.hasAttribute('data-add')){addToCart(t.getAttribute('data-add'));openCart();return}
+  if(t.hasAttribute('data-qty')){const [id,n]=t.getAttribute('data-qty').split(':');setQty(id,parseInt(n,10));return}
+  if(t.hasAttribute('data-remove')){delete cart[t.getAttribute('data-remove')];saveCart();renderCart();return}
+  if(t.hasAttribute('data-open-cart')){openCart();return}
+  if(t.hasAttribute('data-close-cart')){closeCart();return}
+  if(t.hasAttribute('data-menu-toggle')){toggleMenu();return}
+  if(t.hasAttribute('data-wa')){
+    const f=t.closest('form');if(!f.reportValidity())return;
+    window.open('https://wa.me/'+CONFIG.whatsapp+'?text='+encodeURIComponent(orderText(f)),'_blank','noopener');
+    msgStatus(f,'WhatsApp s\'ouvre avec votre message prêt à envoyer.');
+  }
+});
+document.querySelector('.skip').addEventListener('click',e=>{e.preventDefault();$('#main').focus()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeCart();toggleMenu(false)}});
+window.addEventListener('hashchange',render);
+window.addEventListener('scroll',onScroll,{passive:true});
+window.addEventListener('resize',onScroll);
+
+/* ------------------------------ Initialisation ------------------------------ */
+function buildChrome(){
+  $('#nav').innerHTML=NAV.map(n=>`<a href="#${n[0]}" data-path="${n[0]}">${n[1]}</a>`).join('');
+  $('#menu-nav').innerHTML=NAV.map(n=>`<a class="m" href="#${n[0]}" data-path="${n[0]}">${n[1]}</a>`).join('');
+  const mail=contactEmail();
+  $('#site-footer').innerHTML=`
+  <div class="foot">
+    <div><a class="brand" href="#/">ORVÉA</a><p class="muted" style="max-width:30ch">Maison indépendante de création.<br>Three Auras. One Signature.</p></div>
+    <div><h4>La maison</h4><ul><li><a href="#/maison">La maison</a></li><li><a href="#/auras">Les Auras</a></li><li><a href="#/creation">La création</a></li><li><a href="#/journal">Le Journal</a></li></ul></div>
+    <div><h4>Boutique</h4><ul><li><a href="#/trilogie">La trilogie</a></li>${AURAS.map(a=>`<li><a href="#/parfum/${a.id}">${a.nom}</a></li>`).join('')}<li><a href="#/boutique">Coffret Découverte</a></li></ul></div>
+    <div><h4>Informations</h4><ul><li><a href="#/contact">Contact</a></li><li><a href="#/legal/livraison-retours">Livraison et retours</a></li><li><a href="#/legal/cgv">Conditions de vente</a></li><li><a href="#/legal/confidentialite">Confidentialité</a></li><li><a href="#/legal/mentions">Mentions légales</a></li></ul>${mail?`<p style="margin-top:14px"><a href="mailto:${esc(mail)}" class="small muted">${esc(mail)}</a></p>`:''}</div>
+  </div>
+  <div class="foot-base"><span>© ${new Date().getFullYear()} ORVÉA. Joué-lès-Tours, France.</span><span>${esc(CONFIG.legal.tva)}</span></div>`;
+}
+buildChrome();renderCart();render();
+})();
+</script>
+</body>
+</html>
